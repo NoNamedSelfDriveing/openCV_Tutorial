@@ -19,17 +19,20 @@ int main(){
         return -1;
 
     Mat edges;
+    Mat binary;
     namedWindow("edges",1);
 
     for(;;)
     {
         Mat frame;
         cap >> frame; // get a new frame from camera
-        cvtColor(frame, edges, COLOR_BGR2GRAY);
-        GaussianBlur(edges, edges, Size(7,7), 0.001, 0.001);
+        //cvtColor(frame, edges, COLOR_BGR2GRAY);
+        threshold(frame, binary, 100, 255, CV_THRESH_BINARY);
+        GaussianBlur(binary, edges, Size(7,7), 0.001, 0.001);
         //서버 클라이언트 전송 사이 성능 비교 필요 : 해상도?
         imshow("edges", edges);
-        if(waitKey(30) >= 0) break;
+        waitKey(0);
+        //        if(waitKey(30) >= 0) break;
     }
 
     cvDestroyWindow("edges");
