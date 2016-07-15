@@ -18,24 +18,36 @@ int main(){
     if(!cap.isOpened())  // check if we succeeded
         return -1;
 
-    Mat edges;
-    Mat binary;
-    namedWindow("edges",1);
+    Mat Frame;
+    Mat cvtFrame;
+    Mat thresHold;
+    Mat unique;
+    Mat output;
+
+    namedWindow("Origin", 1);
+    namedWindow("cvtColor", 1);
+    namedWindow("cvtColorUnique", 1);
+    namedWindow("Threshold",1);
 
     for(;;)
     {
-        Mat frame;
-        cap >> frame; // get a new frame from camera
-        //cvtColor(frame, edges, COLOR_BGR2GRAY);
-        threshold(frame, binary, 100, 255, CV_THRESH_BINARY);
-        GaussianBlur(binary, edges, Size(7,7), 0.001, 0.001);
+        cap >> Frame; // get a new frame from camera
+        threshold(Frame, unique, 100, 255, CV_THRESH_BINARY);
+        imshow("cvtColorUnique", unique);
+        cvtColor(Frame, cvtFrame, COLOR_BGR2GRAY);
+        threshold(cvtFrame, thresHold, 100, 255, CV_THRESH_BINARY);
+        GaussianBlur(thresHold, output, Size(7,7), 0.001, 0.001);
         //서버 클라이언트 전송 사이 성능 비교 필요 : 해상도?
-        imshow("edges", edges);
-        waitKey(0);
-        //        if(waitKey(30) >= 0) break;
+        imshow("Origin", Frame);
+        imshow("cvtColor", cvtFrame);
+        imshow("Threshold", output);
+        if(waitKey(30) >= 0) break;
     }
 
-    cvDestroyWindow("edges");
+    cvDestroyWindow("Origin");
+    cvDestroyWindow("cvtColor");
+    cvDestroyWindow("Threshold");
+    cvDestroyWindow("cvtColorUnique");
     return 0;
 }
 /*
