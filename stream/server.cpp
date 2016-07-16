@@ -74,11 +74,11 @@ int main(int argc, const char * argv[])
             perror("sock");
         }
 
-        c = cvWaitKey (1);
-        if (c == '\x1b')
+        if( waitKey(1) > 0)
             break;
     }
 
+    cvDestroyWindow(windowName);
     close(sock);
     return 0;
 }
