@@ -19,8 +19,8 @@ int main()
     struct sockaddr_in addr;
     double weight = 800;
     double height = 600;
-    CvCapture *capture = 0;
-    IplImage *frame = 0;
+    VideoCapture capture = 0;
+    //IplImage *frame = 0;
     Mat Mimg;
     vector<uchar> ibuff;
     vector<int> param = vector<int>(2);
@@ -32,28 +32,31 @@ int main()
 
     addr.sin_family = AF_INET;
     addr.sin_port = htons(9000);
-    addr.sin_addr.s_addr = inet_addr("10.156.145.32");
+    addr.sin_addr.s_addr = inet_addr("10.156.145.34");
 
     int n = 1024 * 1024;
-    if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &n, sizeof(n)) == -1) {
+    /*if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &n, sizeof(n)) == -1) {
         // deal with failure, or ignore if you can live with the default size
     }
 
     if (setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &n, sizeof(n)) == -1) {
         // deal with failure, or ignore if you can live with the default size
-    }
+    }*/
 
+    /*
     capture = cvCreateCameraCapture(0);
     cvSetCaptureProperty (capture, CV_CAP_PROP_FRAME_WIDTH, weight);
     cvSetCaptureProperty (capture, CV_CAP_PROP_FRAME_HEIGHT, height);
+    */
+    if(!capture.isOpened()){
+        exit(1);
+    }
     //cvNamedWindow (windowName, CV_WINDOW_AUTOSIZE);
-
 
     //jpeg compression
 
-    frame = cvQueryFrame (capture);
+    capture >> Mimg;
     //I fixed It.
-    Mimg=cvarrToMat(frame);  
     param[0] = CV_IMWRITE_JPEG_QUALITY;
     param[1] = 55; //default(95) 0-100
 
@@ -61,8 +64,7 @@ int main()
     //cout<<"coded file size(jpg)"<<ibuff.size()<<endl;
 
     while (1) {
-        frame = cvQueryFrame (capture);
-        Mimg=cvarrToMat(frame);
+        capture >> Mimg;
         //if (ibuff.size() < sendSize)
         //{
         imencode(".jpg", Mimg, ibuff, param);
@@ -84,11 +86,8 @@ int main()
         }
 
         //imshow(windowName, Mimg);
-        c = cvWaitKey (1);
-        if (c == '\x1b')
-        {
+        if( waitKey(1) > 0)
             break;
-        }
     }
 
     //cvDestroyWindow(windowName);
