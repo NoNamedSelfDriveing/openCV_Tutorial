@@ -20,11 +20,14 @@ int main(){
 
     Mat edges;
     namedWindow("edges",1);
+    //namedWindow("test", 1);
+
     for(;;)
     {
         Mat frame;
         cap >> frame; // get a new frame from camera
         cvtColor(frame, edges, COLOR_BGR2GRAY);
+        //imshow("test", edges);
         GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
         Canny(edges, edges, 0, 30, 3);
         imshow("edges", edges);
