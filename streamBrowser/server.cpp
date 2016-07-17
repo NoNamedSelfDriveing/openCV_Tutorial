@@ -5,80 +5,75 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include<opencv2/opencv.hpp>
+#include<opencv2/highgui/highgui.hpp>
 
 using namespace std;
 using namespace cv;
 
-int main(int argc, const char * argv[])
+int main()
 {
     int sock;
+    int send_len;
+    int c;
     struct sockaddr_in addr;
     double weight = 800;
     double height = 600;
-    char windowName[] = "Server Camera";
-    Mat image = Mat(weight, height, CV_8UC3);
-    int receiveSize = 65*1024;
-    char buff[receiveSize];   
-    int c;
-    int received;
+    VideoCapture capture = 0;
+    Mat frame;
     vector<uchar> ibuff;
+    vector<int> param = vector<int>(2);
+    char windowName[] = "Client Camera";
+    int sendSize = 65535;
+    char buff[sendSize];
 
     sock = socket(AF_INET, SOCK_DGRAM, 0);
 
     addr.sin_family = AF_INET;
     addr.sin_port = htons(9000);
-    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_addr.s_addr = inet_addr("10.156.145.34");
 
-    int n = 1024 * 1024;
-    /*if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &n, sizeof(n)) == -1) {
-    // deal with failure, or ignore if you can live with the default size
+    if(!capture.isOpened()){
+        exit(1);
     }
+    //cvNamedWindow (windowName, CV_WINDOW_AUTOSIZE);
 
-    if (setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &n, sizeof(n)) == -1) {
-    // deal with failure, or ignore if you can live with the default size
-    }*/
+    //jpeg compression
 
-    if( (bind(sock, (struct sockaddr *)&addr, sizeof(addr)))<0){
-        perror("socket");
-        exit(EXIT_FAILURE);
-    }
+    capture >> frame;
+    //I fixed It.
+    param[0] = CV_IMWRITE_JPEG_QUALITY;
+    param[1] = 55; //default(95) 0-100
 
-    cvNamedWindow( windowName, CV_WINDOW_AUTOSIZE );
-    //cvNamedWindow( "test", CV_WINDOW_AUTOSIZE );
+    imencode(".jpg", frame, ibuff, param);
+    //cout<<"coded file size(jpg)"<<ibuff.size()<<endl;
 
-    while(1){
-        printf("Recieved\n");
-        memset(buff, 0, receiveSize);
-        received = recvfrom(sock, buff, receiveSize, 0, NULL,NULL);
-
-        if(received != -1)
+    while (1) {
+        capture >> frame;
+        imencode(".jpg", frame, ibuff, param);
+        for (int i = 0; i < ibuff.size(); i++)
         {
-            for(int i = 0; i < received; i++)
-            {
-                ibuff.push_back((uchar)buff[i]);
-            }
-
-            image = imdecode( Mat(ibuff), CV_LOAD_IMAGE_COLOR);
-            //imshow("test", image);
-            //GaussianBlur(image, image, Size(7,7), 1.5, 1.5);
-            //cvtColor(image, image, COLOR_BGR2GRAY);
-            //Canny(image, image, 0, 30, 3);
-            imshow(windowName, image);
-            ibuff.clear();
-        }
-        
-        else
-        {
-            perror("sock");
+            buff[i]=ibuff[i];
         }
 
+        send_len = sendto(sock, buff, ibuff.size(), 0, (struct sockaddr *)&addr, sizeof(addr));
+
+        imwrite("1.jpg", frame);
+        if (send_len==-1)
+        {
+            perror("socket");
+            //printf("%lu \n", ibuff.size());
+        } else
+        {
+            //printf("%lu \n", ibuff.size());
+        }
+
+        //imshow(windowName, frame);
         if( waitKey(1) > 0)
             break;
     }
 
-    cvDestroyWindow(windowName);
+    //cvDestroyWindow(windowName);
     close(sock);
     return 0;
 }
