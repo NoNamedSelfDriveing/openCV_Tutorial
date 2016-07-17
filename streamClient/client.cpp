@@ -20,8 +20,7 @@ int main()
     double weight = 800;
     double height = 600;
     VideoCapture capture = 0;
-    //IplImage *frame = 0;
-    Mat Mimg;
+    Mat frame;
     vector<uchar> ibuff;
     vector<int> param = vector<int>(2);
     char windowName[] = "Client Camera";
@@ -32,22 +31,8 @@ int main()
 
     addr.sin_family = AF_INET;
     addr.sin_port = htons(9000);
-    addr.sin_addr.s_addr = inet_addr("10.156.145.34");
+    addr.sin_addr.s_addr = inet_addr("10.156.145.32");
 
-    int n = 1024 * 1024;
-    /*if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &n, sizeof(n)) == -1) {
-        // deal with failure, or ignore if you can live with the default size
-    }
-
-    if (setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &n, sizeof(n)) == -1) {
-        // deal with failure, or ignore if you can live with the default size
-    }*/
-
-    /*
-    capture = cvCreateCameraCapture(0);
-    cvSetCaptureProperty (capture, CV_CAP_PROP_FRAME_WIDTH, weight);
-    cvSetCaptureProperty (capture, CV_CAP_PROP_FRAME_HEIGHT, height);
-    */
     if(!capture.isOpened()){
         exit(1);
     }
@@ -55,42 +40,33 @@ int main()
 
     //jpeg compression
 
-    capture >> Mimg;
+    capture >> frame;
     //I fixed It.
     param[0] = CV_IMWRITE_JPEG_QUALITY;
     param[1] = 55; //default(95) 0-100
 
-    imencode(".jpg", Mimg, ibuff, param);
+    imencode(".jpg", frame, ibuff, param);
     //cout<<"coded file size(jpg)"<<ibuff.size()<<endl;
 
     while (1) {
-        capture >> Mimg;
-        //if (ibuff.size() < sendSize)
-        //{
-        imencode(".jpg", Mimg, ibuff, param);
+        capture >> frame;
+        
+        imencode(".jpg", frame, ibuff, param);
         for (int i = 0; i < ibuff.size(); i++)
         {
             buff[i]=ibuff[i];
         }
-        //}
 
         send_len = sendto(sock, buff, ibuff.size(), 0, (struct sockaddr *)&addr, sizeof(addr));
 
         if (send_len==-1)
-        {
             perror("socket");
-            //printf("%lu \n", ibuff.size());
-        } else
-        {
-            //printf("%lu \n", ibuff.size());
-        }
-
-        //imshow(windowName, Mimg);
+        
         if( waitKey(1) > 0)
             break;
     }
 
-    //cvDestroyWindow(windowName);
+    cvDestroyWindow(windowName);
     close(sock);
     return 0;
 }

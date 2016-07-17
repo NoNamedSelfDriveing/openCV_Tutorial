@@ -31,15 +31,6 @@ int main(int argc, const char * argv[])
     addr.sin_port = htons(9000);
     addr.sin_addr.s_addr = INADDR_ANY;
 
-    int n = 1024 * 1024;
-    /*if (setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &n, sizeof(n)) == -1) {
-    // deal with failure, or ignore if you can live with the default size
-    }
-
-    if (setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &n, sizeof(n)) == -1) {
-    // deal with failure, or ignore if you can live with the default size
-    }*/
-
     if( (bind(sock, (struct sockaddr *)&addr, sizeof(addr)))<0){
         perror("socket");
         exit(EXIT_FAILURE);
@@ -61,10 +52,10 @@ int main(int argc, const char * argv[])
             }
 
             image = imdecode( Mat(ibuff), CV_LOAD_IMAGE_COLOR);
-            //imshow("test", image);
-            //GaussianBlur(image, image, Size(7,7), 1.5, 1.5);
-            //cvtColor(image, image, COLOR_BGR2GRAY);
-            //Canny(image, image, 0, 30, 3);
+            imshow("test", image);
+            GaussianBlur(image, image, Size(7,7), 1.5, 1.5);
+            cvtColor(image, image, COLOR_BGR2GRAY);
+            Canny(image, image, 0, 30, 3);
             imshow(windowName, image);
             ibuff.clear();
         }
