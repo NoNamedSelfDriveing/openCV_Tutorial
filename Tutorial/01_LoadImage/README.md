@@ -57,7 +57,7 @@ core, imgcodecs, highgui 을 include 한다<br>
 
 ## Mat
 
-openCV의 다차원 단 체널(gray), 다 체널(RGB) 배열 지원 클래스이다.<br>
+openCV의 다차원 단 채널(gray), 다 채널(RGB) 배열 지원 클래스이다.<br>
 추후 openCV 구조체에 대해서 설명할 때 자세하게 조사할 예정이다. <br>
 
 ---
@@ -78,7 +78,7 @@ openCV의 다차원 단 체널(gray), 다 체널(RGB) 배열 지원 클래스이
 
 
 ### 인자
-인자로는 file의 path를 나타네는 filename과<br>
+인자로는 file의 path를 나타내는 filename과<br>
 이미지 읽기 방식인 flags가 존재 한다.<br>
 
 
