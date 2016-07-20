@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<cstdio>
 #include<string.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -60,7 +60,7 @@ void startServer(char *port)
     freeaddrinfo(res);
 
     // listen for incoming connections
-    if ( listen (listenfd, 1000000) != 0 )
+    if ( listen (listenfd, 10) != 0 )
     {
         perror("listen() error");
         exit(1);
@@ -100,7 +100,13 @@ void respond(int n)
             else
             {
                 if ( strncmp(reqline[1], "/\0", 2) == 0 )
-                    reqline[1] = "/index.html";        //Because if no file is specified, index.html will be opened by default (like it happens in APACHE...
+                    strcpy(reqline[1], "/index.html");        //Because if no file is specified, index.html will be opened by default (like it happens in APACHE...
+
+                else if( strncmp(reqline[1], "/stream\0", 8) == 0 )
+                    strcpy(reqline[1], "/RTstream.html");
+
+                else if( strncmp(reqline[1], "/ads\0", 5) == 0 )
+                    strcpy(reqline[1], "/Advertise.html");
 
                 strcpy(path, ROOT);
                 strcpy(&path[strlen(ROOT)], reqline[1]);
@@ -115,7 +121,7 @@ void respond(int n)
                     strcpy(mesg, "HTTP/1.0 200 OK\n");
                     send(fds[n].fd, mesg, strlen(mesg), 0);
 
-                    sprintf(mesg, "Content-Length: %d\n", sb.st_size);
+                    sprintf(mesg, "Content-Length: %ld\n", sb.st_size);
                     send(fds[n].fd, mesg, strlen(mesg), 0);
                     strcpy(mesg, "Connection: keep-alive\n");
                     send(fds[n].fd, mesg, strlen(mesg), 0);
@@ -144,7 +150,6 @@ void captureFunc(){
     while(1){
         capture >> frame;
         imwrite("1.jpg", frame);
-        //cout << "Complete\n" << endl;
     }
 }
 
@@ -155,8 +160,6 @@ int main(int argc, char* argv[])
     socklen_t addrlen;
     signed char c;    
     thread capFuncThread(&captureFunc);
-
-    //capFuncThread.join();
 
     //Default Values PATH = ~/ and PORT=10000
     char PORT[6];
