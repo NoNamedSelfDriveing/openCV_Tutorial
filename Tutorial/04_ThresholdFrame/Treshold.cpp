@@ -44,10 +44,10 @@ int main(){
         if(waitKey(30) >= 0) break;
     }
 
-    cvDestroyWindow("Origin");
-    cvDestroyWindow("cvtColor");
-    cvDestroyWindow("Threshold");
-    cvDestroyWindow("cvtColorUnique");
+    destroyWindow("Origin");
+    destroyWindow("cvtColor");
+    destroyWindow("Threshold");
+    destroyWindow("cvtColorUnique");
     return 0;
 }
 /*
