@@ -1,5 +1,6 @@
 # openCV_Tutorial
-How to use openCV
+How to use openCV<br>
+[OpenCV Docs](http://docs.opencv.org/3.0-beta/index.html)
 
 ---
 
