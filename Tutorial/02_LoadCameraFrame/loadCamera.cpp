@@ -28,6 +28,6 @@ int main(){
         if(waitKey(30) >= 0) break;
     }
 
-    cvDestroyWindow(WindowName);
+    destroyWindow(WindowName);
     return 0;
 }
