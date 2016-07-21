@@ -29,5 +29,7 @@ int main(int argc, char** argv){
     imshow("Display Potato", image);
 
     waitKey(0);
+
+    destroyWindow("Display Potato");
     return 0;
 }
