@@ -34,7 +34,7 @@ int main(){
         if(waitKey(30) >= 0) break;
     }
 
-    cvDestroyWindow("edges");
+    destroyWindow("edges");
     return 0;
 }
 /*
