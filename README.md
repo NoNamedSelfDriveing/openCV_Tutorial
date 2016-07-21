@@ -3,7 +3,7 @@ How to use openCV<br>
 [OpenCV Docs](http://docs.opencv.org/3.0-beta/index.html)
 
 ---
-# 주의사함
+# 주의사항
 1. 누군가가 Issues를 열었을때 함부로 닫지 말아주세요 모두가 내용을 공유하고나서 닫도록 하겠습니다. <br>
 2. master branch를 수정할경우 밴드에 공지해주고 원들에게 알려주세요<br>
 
