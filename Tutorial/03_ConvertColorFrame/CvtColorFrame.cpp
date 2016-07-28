@@ -35,28 +35,3 @@ int main(){
     destroyWindow("edges");
     return 0;
 }
-/*
-   int main(int argc, char** argv){
-   string imageName("potato.jpg");
-
-   if(argc > 1)
-   {
-   imageName = argv[1];
-   }
-
-   Mat image;
-   image = imread(imageName.c_str(), IMREAD_COLOR);
-
-   if( image.empty() )
-   {
-   cout << "Could not open or find the Image" << std::endl;
-   return -1;
-   }
-
-   namedWindow("Display Potato", WINDOW_AUTOSIZE);
-   imshow("Display Potato", image);
-
-   waitKey(0);
-   return 0;
-   }
-   */
