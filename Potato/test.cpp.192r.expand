@@ -1,0 +1,2009 @@
+
+;; Function ERRCODE::ERRCODE(const char*) (_ZN7ERRCODEC2EPKc, funcdef_no=1141, decl_uid=24596, cgraph_uid=248, symbol_order=252)
+
+ERRCODE::ERRCODE(const char*) (struct ERRCODE * const this, const char * string)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  this_2(D)->message = string_3(D);
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (this_2(D) - 2 )
+Partition 3 (string_3(D) - 3 )
+
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (string_3(D) - 3 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (string_3(D) - 3 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (string_3(D) - 3 )
+
+ERRCODE::ERRCODE(const char*) (struct ERRCODE * const this, const char * string)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  this_2(D)->message = string_3(D);
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; this_2(D)->message = string_3(D);
+
+(insn 7 6 8 (set (reg/f:DI 87)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+
+(insn 8 7 9 (set (reg/f:DI 88)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 string+0 S8 A64])) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+
+(insn 9 8 0 (set (mem/f/j:DI (reg/f:DI 87) [0 this_2(D)->message+0 S8 A64])
+        (reg/f:DI 88)) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) /usr/local/include/tesseract/errcode.h:77 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 string+0 S8 A64])
+        (reg:DI 4 si [ string ])) /usr/local/include/tesseract/errcode.h:77 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg/f:DI 87)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:DI 88)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 string+0 S8 A64])) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+(insn 9 8 12 2 (set (mem/f/j:DI (reg/f:DI 87) [0 this_2(D)->message+0 S8 A64])
+        (reg/f:DI 88)) /usr/local/include/tesseract/errcode.h:78 -1
+     (nil))
+(insn 12 9 0 2 (const_int 0 [0]) /usr/local/include/tesseract/errcode.h:79 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function int tesseract::TessBaseAPI::Init(const char*, const char*) (_ZN9tesseract11TessBaseAPI4InitEPKcS2_, funcdef_no=1330, decl_uid=27110, cgraph_uid=369, symbol_order=374)
+
+int tesseract::TessBaseAPI::Init(const char*, const char*) (struct TessBaseAPI * const this, const char * datapath, const char * language)
+{
+  int D.38128;
+  int D.38126;
+  int _6;
+  int _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _6 = tesseract::TessBaseAPI::Init (this_2(D), datapath_3(D), language_4(D), 3, 0B, 0, 0B, 0B, 0);
+  _7 = _6;
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L0>:
+  return _7;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (this_2(D) - 2 )
+Partition 3 (datapath_3(D) - 3 )
+Partition 4 (language_4(D) - 4 )
+Partition 6 (_6 - 6 )
+Partition 7 (_7 - 7 )
+
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (datapath_3(D) - 3 )
+Partition 2 (language_4(D) - 4 )
+Partition 3 (_6 - 6 )
+Partition 4 (_7 - 7 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(1) _6 <-> _7
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (datapath_3(D) - 3 )
+Partition 2 (language_4(D) - 4 )
+Partition 3 (_6 - 6 )
+Partition 4 (_7 - 7 )
+
+Coalesce list: (6)_6 & (7)_7 [map: 3, 4] : Success -> 3
+After Coalescing:
+
+Partition map 
+
+Partition 0 (this_2(D) - 2 )
+Partition 1 (datapath_3(D) - 3 )
+Partition 2 (language_4(D) - 4 )
+Partition 3 (_6 - 6 7 )
+
+int tesseract::TessBaseAPI::Init(const char*, const char*) (struct TessBaseAPI * const this, const char * datapath, const char * language)
+{
+  int D.38128;
+  int D.38126;
+  int _6;
+  int _7;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _6 = tesseract::TessBaseAPI::Init (this_2(D), datapath_3(D), language_4(D), 3, 0B, 0, 0B, 0B, 0);
+  _7 = _6;
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L0>:
+  return _7;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _6 = tesseract::TessBaseAPI::Init (this_2(D), datapath_3(D), language_4(D), 3, 0B, 0, 0B, 0B, 0);
+
+(insn 8 7 9 (set (reg:DI 89)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 language+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 9 8 10 (set (reg:DI 90)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 datapath+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 10 9 11 (set (reg:DI 91)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 11 10 12 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 8 [0x8])
+        (nil)))
+
+(insn 12 11 13 (set (mem:SI (pre_modify:DI (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -8 [0xfffffffffffffff8]))) [0  S4 A32])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 16 [0x10])
+        (nil)))
+
+(insn 13 12 14 (set (mem/f:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A64])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 24 [0x18])
+        (nil)))
+
+(insn 14 13 15 (set (mem/f:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A64])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 32 [0x20])
+        (nil)))
+
+(insn 15 14 16 (set (reg:SI 38 r9)
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 16 15 17 (set (reg:DI 37 r8)
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 17 16 18 (set (reg:SI 2 cx)
+        (const_int 3 [0x3])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 18 17 19 (set (reg:DI 1 dx)
+        (reg:DI 89)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 19 18 20 (set (reg:DI 4 si)
+        (reg:DI 90)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(insn 20 19 21 (set (reg:DI 5 di)
+        (reg:DI 91)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(call_insn 21 20 22 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI4InitEPKcS2_NS_13OcrEngineModeEPPciPK13GenericVectorI6STRINGESA_b") [flags 0x41]  <function_decl 0x7f139b2d31b0 Init>) [0 Init S1 A8])
+            (const_int 32 [0x20]))) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 37 r8))
+                        (expr_list:SI (use (reg:SI 38 r9))
+                            (nil))))))))
+
+(insn 22 21 23 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 32 [0x20])))
+            (clobber (reg:CC 17 flags))
+        ]) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (nil)))
+
+(insn 23 22 0 (set (reg:SI 87 [ D.38140 ])
+        (reg:SI 0 ax)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+;; _7 = _6;
+
+(nil)
+
+;; Generating RTL for gimple basic block 3
+
+;; <L0>:
+
+(code_label 24 23 25 3 "" [0 uses])
+
+(note 25 24 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _7;
+
+(insn 26 25 27 (set (reg:SI 88 [ <retval> ])
+        (reg:SI 87 [ D.38140 ])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(jump_insn 27 26 28 (set (pc)
+        (label_ref 0)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+
+(barrier 28 27 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 27.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])
+        (reg:DI 5 di [ this ])) /usr/local/include/tesseract/baseapi.h:209 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 datapath+0 S8 A64])
+        (reg:DI 4 si [ datapath ])) /usr/local/include/tesseract/baseapi.h:209 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 language+0 S8 A64])
+        (reg:DI 1 dx [ language ])) /usr/local/include/tesseract/baseapi.h:209 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg:DI 89)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 language+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 90)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 datapath+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 91)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 this+0 S8 A64])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 11 10 12 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 8 [0x8])
+        (nil)))
+(insn 12 11 13 2 (set (mem:SI (pre_modify:DI (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -8 [0xfffffffffffffff8]))) [0  S4 A32])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 16 [0x10])
+        (nil)))
+(insn 13 12 14 2 (set (mem/f:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A64])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 24 [0x18])
+        (nil)))
+(insn 14 13 15 2 (set (mem/f:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A64])
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 32 [0x20])
+        (nil)))
+(insn 15 14 16 2 (set (reg:SI 38 r9)
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 37 r8)
+        (const_int 0 [0])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 2 cx)
+        (const_int 3 [0x3])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:DI 1 dx)
+        (reg:DI 89)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 4 si)
+        (reg:DI 90)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:DI 5 di)
+        (reg:DI 91)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(call_insn 21 20 22 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI4InitEPKcS2_NS_13OcrEngineModeEPPciPK13GenericVectorI6STRINGESA_b") [flags 0x41]  <function_decl 0x7f139b2d31b0 Init>) [0 Init S1 A8])
+            (const_int 32 [0x20]))) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 37 r8))
+                        (expr_list:SI (use (reg:SI 38 r9))
+                            (nil))))))))
+(insn 22 21 23 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int 32 [0x20])))
+            (clobber (reg:CC 17 flags))
+        ]) /usr/local/include/tesseract/baseapi.h:210 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (nil)))
+(insn 23 22 26 2 (set (reg:SI 87 [ D.38140 ])
+        (reg:SI 0 ax)) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 26 23 30 2 (set (reg:SI 88 [ <retval> ])
+        (reg:SI 87 [ D.38140 ])) /usr/local/include/tesseract/baseapi.h:210 -1
+     (nil))
+(insn 30 26 31 2 (set (reg/i:SI 0 ax)
+        (reg:SI 88 [ <retval> ])) /usr/local/include/tesseract/baseapi.h:211 -1
+     (nil))
+(insn 31 30 0 2 (use (reg/i:SI 0 ax)) /usr/local/include/tesseract/baseapi.h:211 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function int main() (main, funcdef_no=1336, decl_uid=38077, cgraph_uid=375, symbol_order=389)
+
+int main() ()
+{
+  void * D.38141;
+  char * D.38122;
+  struct PIX * D.38121;
+  int D.38120;
+  void * D.38118;
+  struct Pix * image;
+  struct TessBaseAPI * api;
+  char * outText;
+  int D.38116;
+  struct Pix * image.4;
+  struct PIX * image.3;
+  struct _IO_FILE * stderr.2;
+  int D.38107;
+  bool retval.1;
+  void * api.0;
+  void * _5;
+  void * api.0_6;
+  int _10;
+  int _11;
+  bool retval.1_12;
+  struct PIX * _14;
+  struct PIX * image.3_15;
+  struct Pix * image.4_17;
+  char * _20;
+  int _26;
+  struct _IO_FILE * stderr.2_28;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _5 = operator new (136);
+  api.0_6 = _5;
+  tesseract::TessBaseAPI::TessBaseAPI (api.0_6);
+;;    succ:       9
+;;                3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  api_8 = api.0_6;
+  _10 = tesseract::TessBaseAPI::Init (api_8, 0B, "eng");
+  _11 = _10;
+  retval.1_12 = _11 != 0;
+  if (retval.1_12 != 0)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+;;    succ:       4
+;;                5
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+  stderr.2_28 = stderr;
+  __builtin_fwrite ("Could not initialize tesseract.\n", 1, 32, stderr.2_28);
+  exit (1);
+;;    succ:      
+
+;;   basic block 5, loop depth 0
+;;    pred:       3
+  _14 = pixRead ("0.png");
+  image.3_15 = _14;
+  image = image.3_15;
+  image.4_17 = image;
+  tesseract::TessBaseAPI::SetImage (api_8, image.4_17);
+  _20 = tesseract::TessBaseAPI::GetUTF8Text (api_8);
+  outText_21 = _20;
+  printf ("OCR output:\n%s", outText_21);
+  tesseract::TessBaseAPI::End (api_8);
+  if (outText_21 != 0B)
+    goto <bb 6>;
+  else
+    goto <bb 7>;
+;;    succ:       6
+;;                7
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+  operator delete [] (outText_21);
+;;    succ:       7
+
+;;   basic block 7, loop depth 0
+;;    pred:       5
+;;                6
+  pixDestroy (&image);
+  _26 = 0;
+  image ={v} {CLOBBER};
+;;    succ:       8
+
+;;   basic block 8, loop depth 0
+;;    pred:       7
+<L6>:
+  return _26;
+;;    succ:       EXIT
+
+;;   basic block 9, loop depth 0
+;;    pred:       2
+<L7>:
+  operator delete (api.0_6);
+  _2 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_2);
+;;    succ:      
+
+}
+
+
+
+Partition map 
+
+Partition 2 (_2 - 2 )
+Partition 5 (_5 - 5 )
+Partition 6 (api.0_6 - 6 )
+Partition 8 (api_8 - 8 )
+Partition 10 (_10 - 10 )
+Partition 11 (_11 - 11 )
+Partition 12 (retval.1_12 - 12 )
+Partition 14 (_14 - 14 )
+Partition 15 (image.3_15 - 15 )
+Partition 17 (image.4_17 - 17 )
+Partition 20 (_20 - 20 )
+Partition 21 (outText_21 - 21 )
+Partition 26 (_26 - 26 )
+Partition 28 (stderr.2_28 - 28 )
+
+
+Partition map 
+
+Partition 0 (_5 - 5 )
+Partition 1 (api.0_6 - 6 )
+Partition 2 (_10 - 10 )
+Partition 3 (_11 - 11 )
+Partition 4 (_14 - 14 )
+Partition 5 (image.3_15 - 15 )
+
+
+Conflict graph:
+
+After sorting:
+Sorted Coalesce list:
+(1) _5 <-> api.0_6
+(1) _10 <-> _11
+(1) _14 <-> image.3_15
+
+Partition map 
+
+Partition 0 (_5 - 5 )
+Partition 1 (api.0_6 - 6 )
+Partition 2 (_10 - 10 )
+Partition 3 (_11 - 11 )
+Partition 4 (_14 - 14 )
+Partition 5 (image.3_15 - 15 )
+
+Coalesce list: (5)_5 & (6)api.0_6 [map: 0, 1] : Success -> 0
+Coalesce list: (10)_10 & (11)_11 [map: 2, 3] : Success -> 2
+Coalesce list: (14)_14 & (15)image.3_15 [map: 4, 5] : Success -> 4
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_2 - 2 )
+Partition 1 (_5 - 5 6 )
+Partition 2 (api_8 - 8 )
+Partition 3 (_10 - 10 11 )
+Partition 4 (retval.1_12 - 12 )
+Partition 5 (_14 - 14 15 )
+Partition 6 (image.4_17 - 17 )
+Partition 7 (_20 - 20 )
+Partition 8 (outText_21 - 21 )
+Partition 9 (_26 - 26 )
+Partition 10 (stderr.2_28 - 28 )
+
+int main() ()
+{
+  void * D.38141;
+  char * D.38122;
+  struct PIX * D.38121;
+  int D.38120;
+  void * D.38118;
+  struct Pix * image;
+  struct TessBaseAPI * api;
+  char * outText;
+  int D.38116;
+  struct Pix * image.4;
+  struct PIX * image.3;
+  struct _IO_FILE * stderr.2;
+  int D.38107;
+  bool retval.1;
+  void * api.0;
+  void * _5;
+  void * api.0_6;
+  int _10;
+  int _11;
+  bool retval.1_12;
+  struct PIX * _14;
+  struct PIX * image.3_15;
+  struct Pix * image.4_17;
+  char * _20;
+  int _26;
+  struct _IO_FILE * stderr.2_28;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _5 = operator new (136);
+  api.0_6 = _5;
+  tesseract::TessBaseAPI::TessBaseAPI (api.0_6);
+;;    succ:       9
+;;                3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  api_8 = api.0_6;
+  _10 = tesseract::TessBaseAPI::Init (api_8, 0B, "eng");
+  _11 = _10;
+  retval.1_12 = _11 != 0;
+  if (retval.1_12 != 0)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+;;    succ:       4
+;;                5
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+  stderr.2_28 = stderr;
+  __builtin_fwrite ("Could not initialize tesseract.\n", 1, 32, stderr.2_28);
+  exit (1);
+;;    succ:      
+
+;;   basic block 5, loop depth 0
+;;    pred:       3
+  _14 = pixRead ("0.png");
+  image.3_15 = _14;
+  image = image.3_15;
+  image.4_17 = image;
+  tesseract::TessBaseAPI::SetImage (api_8, image.4_17);
+  _20 = tesseract::TessBaseAPI::GetUTF8Text (api_8);
+  outText_21 = _20;
+  printf ("OCR output:\n%s", outText_21);
+  tesseract::TessBaseAPI::End (api_8);
+  if (outText_21 != 0B)
+    goto <bb 6>;
+  else
+    goto <bb 7>;
+;;    succ:       6
+;;                7
+
+;;   basic block 6, loop depth 0
+;;    pred:       5
+  operator delete [] (outText_21);
+;;    succ:       7
+
+;;   basic block 7, loop depth 0
+;;    pred:       5
+;;                6
+  pixDestroy (&image);
+  _26 = 0;
+  image ={v} {CLOBBER};
+;;    succ:       8
+
+;;   basic block 8, loop depth 0
+;;    pred:       7
+<L6>:
+  return _26;
+;;    succ:       EXIT
+
+;;   basic block 9, loop depth 0
+;;    pred:       2
+<L7>:
+  operator delete (api.0_6);
+  _2 = __builtin_eh_pointer (2);
+  __builtin_unwind_resume (_2);
+;;    succ:      
+
+}
+
+
+Partition 1: size 8 align 8
+	outText_21
+Partition 0: size 8 align 8
+	api_8
+Partition 2: size 8 align 8
+	image
+
+;; Generating RTL for gimple basic block 2
+
+;; _5 = operator new (136);
+
+(insn 6 5 7 (set (reg:DI 5 di)
+        (const_int 136 [0x88])) test.cpp:10 -1
+     (nil))
+
+(call_insn 7 6 8 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_Znwm") [flags 0x41]  <function_decl 0x7f139caec870 operator new>) [0 operator new S1 A8])
+            (const_int 0 [0]))) test.cpp:10 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+(insn 8 7 9 (set (reg/f:DI 97)
+        (reg:DI 0 ax)) test.cpp:10 -1
+     (expr_list:REG_NOALIAS (reg/f:DI 97)
+        (nil)))
+
+(insn 9 8 0 (set (reg/f:DI 88 [ D.38142 ])
+        (reg/f:DI 97)) test.cpp:10 -1
+     (nil))
+
+;; _6 = _5;
+
+(nil)
+
+;; tesseract::TessBaseAPI::TessBaseAPI (_6);
+
+(insn 10 9 11 (set (reg:DI 5 di)
+        (reg/f:DI 88 [ D.38142 ])) -1
+     (nil))
+
+(call_insn 11 10 0 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPIC1Ev") [flags 0x41]  <function_decl 0x7f139b2ec798 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) -1
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; Generating RTL for gimple basic block 3
+
+;; api_8 = _6;
+
+(insn 13 12 0 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])
+        (reg/f:DI 88 [ D.38142 ])) test.cpp:10 -1
+     (nil))
+
+;; _10 = tesseract::TessBaseAPI::Init (api_8, 0B, "eng");
+
+(insn 14 13 15 (set (reg:DI 98)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:12 -1
+     (nil))
+
+(insn 15 14 16 (set (reg:DI 1 dx)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f139aef22d0 *.LC0>)) test.cpp:12 -1
+     (nil))
+
+(insn 16 15 17 (set (reg:DI 4 si)
+        (const_int 0 [0])) test.cpp:12 -1
+     (nil))
+
+(insn 17 16 18 (set (reg:DI 5 di)
+        (reg:DI 98)) test.cpp:12 -1
+     (nil))
+
+(call_insn 18 17 19 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZN9tesseract11TessBaseAPI4InitEPKcS2_") [flags 0x3]  <function_decl 0x7f139b2d3360 Init>) [0 Init S1 A8])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+
+(insn 19 18 0 (set (reg:SI 89 [ D.38143 ])
+        (reg:SI 0 ax)) test.cpp:12 -1
+     (nil))
+
+;; _11 = _10;
+
+(nil)
+
+;; _12 = _11 != 0;
+
+(insn 20 19 21 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ D.38143 ])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+
+(insn 21 20 0 (set (reg:QI 90 [ D.38144 ])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+
+;; if (_12 != 0)
+
+(insn 22 21 23 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 90 [ D.38144 ])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+
+(jump_insn 23 22 0 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 0)
+            (pc))) test.cpp:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; _28 = stderr;
+
+(insn 25 24 0 (set (reg/f:DI 95 [ D.38148 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f139b7d1510 stderr>) [0 stderr+0 S8 A64])) test.cpp:13 -1
+     (nil))
+
+;; __builtin_fwrite ("Could not initialize tesseract.\n", 1, 32, _28);
+
+(insn 26 25 27 (set (reg:DI 2 cx)
+        (reg/f:DI 95 [ D.38148 ])) test.cpp:13 -1
+     (nil))
+
+(insn 27 26 28 (set (reg:DI 1 dx)
+        (const_int 32 [0x20])) test.cpp:13 -1
+     (nil))
+
+(insn 28 27 29 (set (reg:DI 4 si)
+        (const_int 1 [0x1])) test.cpp:13 -1
+     (nil))
+
+(insn 29 28 30 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f139aef2360 *.LC1>)) test.cpp:13 -1
+     (nil))
+
+(call_insn 30 29 0 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fwrite") [flags 0x41]  <function_decl 0x7f139ca48000 __builtin_fwrite>) [0 __builtin_fwrite S1 A8])
+            (const_int 0 [0]))) test.cpp:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:DI (use (reg:DI 2 cx))
+                    (nil))))))
+
+;; exit (1);
+
+(insn 31 30 32 (set (reg:SI 5 di)
+        (const_int 1 [0x1])) test.cpp:14 -1
+     (nil))
+
+(call_insn 32 31 33 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f139ca64ca8 exit>) [0 __builtin_exit S1 A8])
+        (const_int 0 [0])) test.cpp:14 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+
+(barrier 33 32 0)
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 34 33 35 5 "" [0 uses])
+
+(note 35 34 0 NOTE_INSN_BASIC_BLOCK)
+
+;; _14 = pixRead ("0.png");
+
+(insn 36 35 37 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f139aef23f0 *.LC2>)) test.cpp:17 -1
+     (nil))
+
+(call_insn 37 36 38 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("pixRead") [flags 0x41]  <function_decl 0x7f139b205a20 pixRead>) [0 pixRead S1 A8])
+            (const_int 0 [0]))) test.cpp:17 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+(insn 38 37 0 (set (reg/f:DI 91 [ D.38145 ])
+        (reg:DI 0 ax)) test.cpp:17 -1
+     (nil))
+
+;; _15 = _14;
+
+(nil)
+
+;; image = _15;
+
+(insn 39 38 0 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [0 image+0 S8 A64])
+        (reg/f:DI 91 [ D.38145 ])) test.cpp:17 -1
+     (nil))
+
+;; _17 = image;
+
+(insn 40 39 0 (set (reg/f:DI 92 [ D.38146 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [0 image+0 S8 A64])) test.cpp:18 -1
+     (nil))
+
+;; tesseract::TessBaseAPI::SetImage (api_8, _17);
+
+(insn 41 40 42 (set (reg:DI 99)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:18 -1
+     (nil))
+
+(insn 42 41 43 (set (reg:DI 4 si)
+        (reg/f:DI 92 [ D.38146 ])) test.cpp:18 -1
+     (nil))
+
+(insn 43 42 44 (set (reg:DI 5 di)
+        (reg:DI 99)) test.cpp:18 -1
+     (nil))
+
+(call_insn 44 43 0 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI8SetImageEPK3Pix") [flags 0x41]  <function_decl 0x7f139b2d9000 SetImage>) [0 SetImage S1 A8])
+        (const_int 0 [0])) test.cpp:18 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+
+;; _20 = tesseract::TessBaseAPI::GetUTF8Text (api_8);
+
+(insn 45 44 46 (set (reg:DI 100)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:20 -1
+     (nil))
+
+(insn 46 45 47 (set (reg:DI 5 di)
+        (reg:DI 100)) test.cpp:20 -1
+     (nil))
+
+(call_insn 47 46 48 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI11GetUTF8TextEv") [flags 0x41]  <function_decl 0x7f139b2df0d8 GetUTF8Text>) [0 GetUTF8Text S1 A8])
+            (const_int 0 [0]))) test.cpp:20 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+(insn 48 47 0 (set (reg/f:DI 93 [ D.38147 ])
+        (reg:DI 0 ax)) test.cpp:20 -1
+     (nil))
+
+;; outText_21 = _20;
+
+(insn 49 48 0 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])
+        (reg/f:DI 93 [ D.38147 ])) test.cpp:20 -1
+     (nil))
+
+;; printf ("OCR output:\n%s", outText_21);
+
+(insn 50 49 51 (set (reg:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])) test.cpp:21 -1
+     (nil))
+
+(insn 51 50 52 (set (reg:DI 4 si)
+        (reg:DI 101)) test.cpp:21 -1
+     (nil))
+
+(insn 52 51 53 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f139aef2480 *.LC3>)) test.cpp:21 -1
+     (nil))
+
+(insn 53 52 54 (set (reg:QI 0 ax)
+        (const_int 0 [0])) test.cpp:21 -1
+     (nil))
+
+(call_insn 54 53 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f139ca485e8 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) test.cpp:21 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+
+;; tesseract::TessBaseAPI::End (api_8);
+
+(insn 55 54 56 (set (reg:DI 102)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:23 -1
+     (nil))
+
+(insn 56 55 57 (set (reg:DI 5 di)
+        (reg:DI 102)) test.cpp:23 -1
+     (nil))
+
+(call_insn 57 56 0 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI3EndEv") [flags 0x41]  <function_decl 0x7f139b2df798 End>) [0 End S1 A8])
+        (const_int 0 [0])) test.cpp:23 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; if (outText_21 != 0B)
+
+(insn 58 57 59 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])
+            (const_int 0 [0]))) test.cpp:24 -1
+     (nil))
+
+(jump_insn 59 58 0 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 0)
+            (pc))) test.cpp:24 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; operator delete [] (outText_21);
+
+(insn 61 60 62 (set (reg:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])) test.cpp:24 -1
+     (nil))
+
+(insn 62 61 63 (set (reg:DI 5 di)
+        (reg:DI 103)) test.cpp:24 -1
+     (nil))
+
+(call_insn 63 62 0 (call (mem:QI (symbol_ref:DI ("_ZdaPv") [flags 0x41]  <function_decl 0x7f139caecaf8 operator delete []>) [0 operator delete [] S1 A8])
+        (const_int 0 [0])) test.cpp:24 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; Generating RTL for gimple basic block 7
+
+;; 
+
+(code_label 64 63 65 6 "" [0 uses])
+
+(note 65 64 0 NOTE_INSN_BASIC_BLOCK)
+
+;; pixDestroy (&image);
+
+(insn 66 65 67 (parallel [
+            (set (reg:DI 104)
+                (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+        ]) test.cpp:25 -1
+     (nil))
+
+(insn 67 66 68 (set (reg:DI 5 di)
+        (reg:DI 104)) test.cpp:25 -1
+     (nil))
+
+(call_insn 68 67 0 (call (mem:QI (symbol_ref:DI ("pixDestroy") [flags 0x41]  <function_decl 0x7f139b12c870 pixDestroy>) [0 pixDestroy S1 A8])
+        (const_int 0 [0])) test.cpp:25 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; _26 = 0;
+
+(insn 69 68 0 (set (reg:SI 94 [ D.38143 ])
+        (const_int 0 [0])) test.cpp:27 -1
+     (nil))
+
+;; image ={v} {CLOBBER};
+
+(nil)
+
+;; Generating RTL for gimple basic block 8
+
+;; <L6>:
+
+(code_label 70 69 71 7 "" [0 uses])
+
+(note 71 70 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _26;
+
+(insn 72 71 73 (set (reg:SI 96 [ <retval> ])
+        (reg:SI 94 [ D.38143 ])) -1
+     (nil))
+
+(jump_insn 73 72 74 (set (pc)
+        (label_ref 0)) -1
+     (nil))
+
+(barrier 74 73 0)
+
+;; Generating RTL for gimple basic block 9
+
+;; <L7>:
+
+(code_label 75 74 76 8 "" [0 uses])
+
+(note 76 75 0 NOTE_INSN_BASIC_BLOCK)
+
+;; operator delete (_6);
+
+(insn 77 76 78 (set (reg:DI 5 di)
+        (reg/f:DI 88 [ D.38142 ])) test.cpp:10 -1
+     (nil))
+
+(call_insn 78 77 0 (call (mem:QI (symbol_ref:DI ("_ZdlPv") [flags 0x41]  <function_decl 0x7f139caeca20 operator delete>) [0 operator delete S1 A8])
+        (const_int 0 [0])) test.cpp:10 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; _2 = __builtin_eh_pointer (2);
+
+(insn 79 78 0 (set (reg/f:DI 87 [ D.38141 ])
+        (reg:DI 106)) -1
+     (nil))
+
+;; __builtin_unwind_resume (_2);
+
+(insn 80 79 81 (set (reg:DI 5 di)
+        (reg/f:DI 87 [ D.38141 ])) -1
+     (nil))
+
+(call_insn 81 80 82 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f139cae8d80 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+(barrier 82 81 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 3 2 NOTE_INSN_FUNCTION_BEG)
+(insn 3 2 6 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [0 D.38149+0 S8 A64])
+                (unspec:DI [
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_SET))
+            (set (scratch:DI)
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) test.cpp:7 -1
+     (nil))
+(insn 6 3 7 2 (set (reg:DI 5 di)
+        (const_int 136 [0x88])) test.cpp:10 -1
+     (nil))
+(call_insn 7 6 8 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_Znwm") [flags 0x41]  <function_decl 0x7f139caec870 operator new>) [0 operator new S1 A8])
+            (const_int 0 [0]))) test.cpp:10 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 8 7 9 2 (set (reg/f:DI 97)
+        (reg:DI 0 ax)) test.cpp:10 -1
+     (expr_list:REG_NOALIAS (reg/f:DI 97)
+        (nil)))
+(insn 9 8 10 2 (set (reg/f:DI 88 [ D.38142 ])
+        (reg/f:DI 97)) test.cpp:10 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg/f:DI 88 [ D.38142 ])) -1
+     (nil))
+(call_insn 11 10 12 2 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPIC1Ev") [flags 0x41]  <function_decl 0x7f139b2ec798 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) -1
+     (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+;;  succ:       10 (ABNORMAL,ABNORMAL_CALL,EH)
+;;              4 (FALLTHRU)
+
+;; basic block 4, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 (FALLTHRU)
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 13 12 14 4 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])
+        (reg/f:DI 88 [ D.38142 ])) test.cpp:10 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:DI 98)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:12 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:DI 1 dx)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f139aef22d0 *.LC0>)) test.cpp:12 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:DI 4 si)
+        (const_int 0 [0])) test.cpp:12 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:DI 5 di)
+        (reg:DI 98)) test.cpp:12 -1
+     (nil))
+(call_insn 18 17 19 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:DI ("_ZN9tesseract11TessBaseAPI4InitEPKcS2_") [flags 0x3]  <function_decl 0x7f139b2d3360 Init>) [0 Init S1 A8])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 19 18 20 4 (set (reg:SI 89 [ D.38143 ])
+        (reg:SI 0 ax)) test.cpp:12 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ D.38143 ])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:QI 90 [ D.38144 ])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 90 [ D.38144 ])
+            (const_int 0 [0]))) test.cpp:12 -1
+     (nil))
+(jump_insn 23 22 24 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) test.cpp:12 -1
+     (nil)
+ -> 34)
+;;  succ:       5 (FALLTHRU)
+;;              6
+
+;; basic block 5, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 4, next block 6, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4 (FALLTHRU)
+(note 24 23 25 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 5 (set (reg/f:DI 95 [ D.38148 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f139b7d1510 stderr>) [0 stderr+0 S8 A64])) test.cpp:13 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:DI 2 cx)
+        (reg/f:DI 95 [ D.38148 ])) test.cpp:13 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:DI 1 dx)
+        (const_int 32 [0x20])) test.cpp:13 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:DI 4 si)
+        (const_int 1 [0x1])) test.cpp:13 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f139aef2360 *.LC1>)) test.cpp:13 -1
+     (nil))
+(call_insn 30 29 31 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fwrite") [flags 0x41]  <function_decl 0x7f139ca48000 __builtin_fwrite>) [0 __builtin_fwrite S1 A8])
+            (const_int 0 [0]))) test.cpp:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:DI (use (reg:DI 2 cx))
+                    (nil))))))
+(insn 31 30 32 5 (set (reg:SI 5 di)
+        (const_int 1 [0x1])) test.cpp:14 -1
+     (nil))
+(call_insn 32 31 33 5 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f139ca64ca8 exit>) [0 __builtin_exit S1 A8])
+        (const_int 0 [0])) test.cpp:14 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+;;  succ:      
+
+(barrier 33 32 34)
+;; basic block 6, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 5, next block 7, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4
+(code_label 34 33 35 6 5 "" [1 uses])
+(note 35 34 36 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 6 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f139aef23f0 *.LC2>)) test.cpp:17 -1
+     (nil))
+(call_insn 37 36 38 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("pixRead") [flags 0x41]  <function_decl 0x7f139b205a20 pixRead>) [0 pixRead S1 A8])
+            (const_int 0 [0]))) test.cpp:17 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 38 37 39 6 (set (reg/f:DI 91 [ D.38145 ])
+        (reg:DI 0 ax)) test.cpp:17 -1
+     (nil))
+(insn 39 38 40 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [0 image+0 S8 A64])
+        (reg/f:DI 91 [ D.38145 ])) test.cpp:17 -1
+     (nil))
+(insn 40 39 41 6 (set (reg/f:DI 92 [ D.38146 ])
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [0 image+0 S8 A64])) test.cpp:18 -1
+     (nil))
+(insn 41 40 42 6 (set (reg:DI 99)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:18 -1
+     (nil))
+(insn 42 41 43 6 (set (reg:DI 4 si)
+        (reg/f:DI 92 [ D.38146 ])) test.cpp:18 -1
+     (nil))
+(insn 43 42 44 6 (set (reg:DI 5 di)
+        (reg:DI 99)) test.cpp:18 -1
+     (nil))
+(call_insn 44 43 45 6 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI8SetImageEPK3Pix") [flags 0x41]  <function_decl 0x7f139b2d9000 SetImage>) [0 SetImage S1 A8])
+        (const_int 0 [0])) test.cpp:18 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 45 44 46 6 (set (reg:DI 100)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:20 -1
+     (nil))
+(insn 46 45 47 6 (set (reg:DI 5 di)
+        (reg:DI 100)) test.cpp:20 -1
+     (nil))
+(call_insn 47 46 48 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI11GetUTF8TextEv") [flags 0x41]  <function_decl 0x7f139b2df0d8 GetUTF8Text>) [0 GetUTF8Text S1 A8])
+            (const_int 0 [0]))) test.cpp:20 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 48 47 49 6 (set (reg/f:DI 93 [ D.38147 ])
+        (reg:DI 0 ax)) test.cpp:20 -1
+     (nil))
+(insn 49 48 50 6 (set (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])
+        (reg/f:DI 93 [ D.38147 ])) test.cpp:20 -1
+     (nil))
+(insn 50 49 51 6 (set (reg:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])) test.cpp:21 -1
+     (nil))
+(insn 51 50 52 6 (set (reg:DI 4 si)
+        (reg:DI 101)) test.cpp:21 -1
+     (nil))
+(insn 52 51 53 6 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f139aef2480 *.LC3>)) test.cpp:21 -1
+     (nil))
+(insn 53 52 54 6 (set (reg:QI 0 ax)
+        (const_int 0 [0])) test.cpp:21 -1
+     (nil))
+(call_insn 54 53 55 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f139ca485e8 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) test.cpp:21 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 55 54 56 6 (set (reg:DI 102)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [0 api+0 S8 A64])) test.cpp:23 -1
+     (nil))
+(insn 56 55 57 6 (set (reg:DI 5 di)
+        (reg:DI 102)) test.cpp:23 -1
+     (nil))
+(call_insn 57 56 58 6 (call (mem:QI (symbol_ref:DI ("_ZN9tesseract11TessBaseAPI3EndEv") [flags 0x41]  <function_decl 0x7f139b2df798 End>) [0 End S1 A8])
+        (const_int 0 [0])) test.cpp:23 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 58 57 59 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])
+            (const_int 0 [0]))) test.cpp:24 -1
+     (nil))
+(jump_insn 59 58 60 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 64)
+            (pc))) test.cpp:24 -1
+     (nil)
+ -> 64)
+;;  succ:       7 (FALLTHRU)
+;;              8
+
+;; basic block 7, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 6, next block 8, flags: (NEW, REACHABLE, RTL)
+;;  pred:       6 (FALLTHRU)
+(note 60 59 61 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 61 60 62 7 (set (reg:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [0 outText+0 S8 A64])) test.cpp:24 -1
+     (nil))
+(insn 62 61 63 7 (set (reg:DI 5 di)
+        (reg:DI 103)) test.cpp:24 -1
+     (nil))
+(call_insn 63 62 64 7 (call (mem:QI (symbol_ref:DI ("_ZdaPv") [flags 0x41]  <function_decl 0x7f139caecaf8 operator delete []>) [0 operator delete [] S1 A8])
+        (const_int 0 [0])) test.cpp:24 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+;;  succ:       8 (FALLTHRU)
+
+;; basic block 8, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 7, next block 10, flags: (NEW, REACHABLE, RTL)
+;;  pred:       6
+;;              7 (FALLTHRU)
+(code_label 64 63 65 8 6 "" [1 uses])
+(note 65 64 66 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 8 (parallel [
+            (set (reg:DI 104)
+                (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+        ]) test.cpp:25 -1
+     (nil))
+(insn 67 66 68 8 (set (reg:DI 5 di)
+        (reg:DI 104)) test.cpp:25 -1
+     (nil))
+(call_insn 68 67 69 8 (call (mem:QI (symbol_ref:DI ("pixDestroy") [flags 0x41]  <function_decl 0x7f139b12c870 pixDestroy>) [0 pixDestroy S1 A8])
+        (const_int 0 [0])) test.cpp:25 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 69 68 72 8 (set (reg:SI 94 [ D.38143 ])
+        (const_int 0 [0])) test.cpp:27 -1
+     (nil))
+(insn 72 69 73 8 (set (reg:SI 96 [ <retval> ])
+        (reg:SI 94 [ D.38143 ])) -1
+     (nil))
+(jump_insn 73 72 74 8 (set (pc)
+        (label_ref 83)) -1
+     (nil)
+ -> 83)
+;;  succ:       12
+
+(barrier 74 73 94)
+;; basic block 10, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 8, next block 12, flags: (NEW, REACHABLE, RTL)
+;;  pred:       2 (ABNORMAL,ABNORMAL_CALL,EH)
+(code_label/s 94 74 96 10 10 "" [1 uses])
+(note 96 94 95 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 95 96 77 10 (set (reg:DI 106)
+        (reg:DI 0 ax)) -1
+     (nil))
+(insn 77 95 78 10 (set (reg:DI 5 di)
+        (reg/f:DI 88 [ D.38142 ])) test.cpp:10 -1
+     (nil))
+(call_insn 78 77 79 10 (call (mem:QI (symbol_ref:DI ("_ZdlPv") [flags 0x41]  <function_decl 0x7f139caeca20 operator delete>) [0 operator delete S1 A8])
+        (const_int 0 [0])) test.cpp:10 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 79 78 80 10 (set (reg/f:DI 87 [ D.38141 ])
+        (reg:DI 106)) -1
+     (nil))
+(insn 80 79 81 10 (set (reg:DI 5 di)
+        (reg/f:DI 87 [ D.38141 ])) -1
+     (nil))
+(call_insn 81 80 82 10 (call (mem:QI (symbol_ref:DI ("_Unwind_Resume") [flags 0x41]  <function_decl 0x7f139cae8d80 __builtin_unwind_resume>) [0 __builtin_unwind_resume S1 A8])
+        (const_int 0 [0])) -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+;;  succ:      
+
+(barrier 82 81 83)
+;; basic block 12, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 10, next block 13, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       8
+(code_label 83 82 91 12 4 "" [1 uses])
+(note 91 83 84 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 84 91 85 12 (set (reg/i:SI 0 ax)
+        (reg:SI 96 [ <retval> ])) test.cpp:28 -1
+     (nil))
+(insn 85 84 86 12 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                                (const_int -8 [0xfffffffffffffff8])) [0 D.38149+0 S8 A64])
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_TEST))
+            (clobber (scratch:DI))
+        ]) test.cpp:28 -1
+     (nil))
+(jump_insn 86 85 92 12 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 89)
+            (pc))) test.cpp:28 -1
+     (nil)
+ -> 89)
+;;  succ:       14
+;;              13 (FALLTHRU)
+
+;; basic block 13, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 12, next block 14, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       12 (FALLTHRU)
+(note 92 86 87 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(call_insn 87 92 88 13 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f139aee2e58 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) test.cpp:28 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+;;  succ:      
+
+(barrier 88 87 89)
+;; basic block 14, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 13, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       12
+(code_label 89 88 93 14 9 "" [1 uses])
+(note 93 89 90 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 90 93 0 14 (use (reg/i:SI 0 ax)) test.cpp:28 -1
+     (nil))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function void __static_initialization_and_destruction_0(int, int) (_Z41__static_initialization_and_destruction_0ii, funcdef_no=1338, decl_uid=38098, cgraph_uid=377, symbol_order=422)
+
+void __static_initialization_and_destruction_0(int, int) (int __initialize_p, int __priority)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  if (__initialize_p_2(D) == 1)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+;;    succ:       3
+;;                5
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  if (__priority_4(D) == 65535)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+;;    succ:       4
+;;                5
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+  std::ios_base::Init::Init (&__ioinit);
+  __cxa_atexit (__comp_dtor , &__ioinit, &__dso_handle);
+  ERRCODE::ERRCODE (&ASSERT_FAILED, "Assert failed");
+;;    succ:       5
+
+;;   basic block 5, loop depth 0
+;;    pred:       2
+;;                4
+;;                3
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 2 (__initialize_p_2(D) - 2 )
+Partition 4 (__priority_4(D) - 4 )
+
+
+Partition map 
+
+Partition 0 (__initialize_p_2(D) - 2 )
+Partition 1 (__priority_4(D) - 4 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (__initialize_p_2(D) - 2 )
+Partition 1 (__priority_4(D) - 4 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (__initialize_p_2(D) - 2 )
+Partition 1 (__priority_4(D) - 4 )
+
+void __static_initialization_and_destruction_0(int, int) (int __initialize_p, int __priority)
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  if (__initialize_p_2(D) == 1)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+;;    succ:       3
+;;                5
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+  if (__priority_4(D) == 65535)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+;;    succ:       4
+;;                5
+
+;;   basic block 4, loop depth 0
+;;    pred:       3
+  std::ios_base::Init::Init (&__ioinit);
+  __cxa_atexit (__comp_dtor , &__ioinit, &__dso_handle);
+  ERRCODE::ERRCODE (&ASSERT_FAILED, "Assert failed");
+;;    succ:       5
+
+;;   basic block 5, loop depth 0
+;;    pred:       2
+;;                4
+;;                3
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; if (__initialize_p_2(D) == 1)
+
+(insn 7 6 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [0 __initialize_p+0 S4 A32])
+            (const_int 1 [0x1]))) test.cpp:28 -1
+     (nil))
+
+(jump_insn 8 7 0 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 0)
+            (pc))) test.cpp:28 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; if (__priority_4(D) == 65535)
+
+(insn 10 9 11 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [0 __priority+0 S4 A32])
+            (const_int 65535 [0xffff]))) test.cpp:28 -1
+     (nil))
+
+(jump_insn 11 10 0 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 0)
+            (pc))) test.cpp:28 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; std::ios_base::Init::Init (&__ioinit);
+
+(insn 13 12 14 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0x7f139b7d1e10 __ioinit>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+
+(call_insn 14 13 0 (call (mem:QI (symbol_ref:DI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0x7f139bb681b0 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) /usr/include/c++/5/iostream:74 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; __cxa_atexit (__comp_dtor , &__ioinit, &__dso_handle);
+
+(insn 15 14 16 (set (reg:DI 1 dx)
+        (symbol_ref:DI ("__dso_handle") [flags 0x42]  <var_decl 0x7f139b30ae10 __dso_handle>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+
+(insn 16 15 17 (set (reg:DI 4 si)
+        (symbol_ref:DI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0x7f139b7d1e10 __ioinit>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+
+(insn 17 16 18 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0x7f139bb7a0d8 __comp_dtor >)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+
+(call_insn 18 17 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_atexit") [flags 0x41]  <function_decl 0x7f139aeba5e8 __cxa_atexit>) [0 __cxa_atexit S1 A8])
+            (const_int 0 [0]))) /usr/include/c++/5/iostream:74 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+
+;; ERRCODE::ERRCODE (&ASSERT_FAILED, "Assert failed");
+
+(insn 19 18 20 (set (reg:DI 4 si)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f139aef2d80 *.LC4>)) /usr/local/include/tesseract/errcode.h:82 -1
+     (nil))
+
+(insn 20 19 21 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZL13ASSERT_FAILED") [flags 0x2]  <var_decl 0x7f139b54c900 ASSERT_FAILED>)) /usr/local/include/tesseract/errcode.h:82 -1
+     (nil))
+
+(call_insn 21 20 0 (call (mem:QI (symbol_ref/i:DI ("_ZN7ERRCODEC1EPKc") [flags 0x3]  <function_decl 0x7f139b547ca8 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) /usr/local/include/tesseract/errcode.h:82 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 22 21 23 13 "" [0 uses])
+
+(note 23 22 0 NOTE_INSN_BASIC_BLOCK)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->6 redirected to 7
+Edge 4->6 redirected to 7
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 4, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       ENTRY (FALLTHRU)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [0 __initialize_p+0 S4 A32])
+        (reg:SI 5 di [ __initialize_p ])) test.cpp:28 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 __priority+0 S4 A32])
+        (reg:SI 4 si [ __priority ])) test.cpp:28 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [0 __initialize_p+0 S4 A32])
+            (const_int 1 [0x1]))) test.cpp:28 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 24)
+            (pc))) test.cpp:28 612 {*jcc_1}
+     (nil)
+ -> 24)
+;;  succ:       4 (FALLTHRU)
+;;              7
+
+;; basic block 4, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 2, next block 5, flags: (NEW, REACHABLE, RTL, MODIFIED)
+;;  pred:       2 (FALLTHRU)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 82 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [0 __priority+0 S4 A32])
+            (const_int 65535 [0xffff]))) test.cpp:28 -1
+     (nil))
+(jump_insn 11 10 12 4 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 24)
+            (pc))) test.cpp:28 612 {*jcc_1}
+     (nil)
+ -> 24)
+;;  succ:       5 (FALLTHRU)
+;;              7
+
+;; basic block 5, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 4, next block 7, flags: (NEW, REACHABLE, RTL)
+;;  pred:       4 (FALLTHRU)
+(note 12 11 13 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 13 12 14 5 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0x7f139b7d1e10 __ioinit>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+(call_insn 14 13 15 5 (call (mem:QI (symbol_ref:DI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0x7f139bb681b0 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) /usr/include/c++/5/iostream:74 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 14 16 5 (set (reg:DI 1 dx)
+        (symbol_ref:DI ("__dso_handle") [flags 0x42]  <var_decl 0x7f139b30ae10 __dso_handle>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+(insn 16 15 17 5 (set (reg:DI 4 si)
+        (symbol_ref:DI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0x7f139b7d1e10 __ioinit>)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+(insn 17 16 18 5 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0x7f139bb7a0d8 __comp_dtor >)) /usr/include/c++/5/iostream:74 -1
+     (nil))
+(call_insn 18 17 19 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__cxa_atexit") [flags 0x41]  <function_decl 0x7f139aeba5e8 __cxa_atexit>) [0 __cxa_atexit S1 A8])
+            (const_int 0 [0]))) /usr/include/c++/5/iostream:74 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 19 18 20 5 (set (reg:DI 4 si)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f139aef2d80 *.LC4>)) /usr/local/include/tesseract/errcode.h:82 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:DI 5 di)
+        (symbol_ref:DI ("_ZL13ASSERT_FAILED") [flags 0x2]  <var_decl 0x7f139b54c900 ASSERT_FAILED>)) /usr/local/include/tesseract/errcode.h:82 -1
+     (nil))
+(call_insn 21 20 24 5 (call (mem:QI (symbol_ref/i:DI ("_ZN7ERRCODEC1EPKc") [flags 0x3]  <function_decl 0x7f139b547ca8 __comp_ctor >) [0 __comp_ctor  S1 A8])
+        (const_int 0 [0])) /usr/local/include/tesseract/errcode.h:82 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+;;  succ:       7 (FALLTHRU)
+
+;; basic block 7, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 5, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       5 (FALLTHRU)
+;;              2
+;;              4
+(code_label 24 21 25 7 12 "" [2 uses])
+(note 25 24 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+
+
+;; Function (static initializers for test.cpp) (_GLOBAL__sub_I_main, funcdef_no=1339, decl_uid=38104, cgraph_uid=378, symbol_order=533)
+
+(static initializers for test.cpp) ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __static_initialization_and_destruction_0 (1, 65535);
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+
+After Coalescing:
+
+Partition map 
+
+
+(static initializers for test.cpp) ()
+{
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  __static_initialization_and_destruction_0 (1, 65535);
+  return;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; __static_initialization_and_destruction_0 (1, 65535);
+
+(insn 5 4 6 (set (reg:SI 4 si)
+        (const_int 65535 [0xffff])) test.cpp:28 -1
+     (nil))
+
+(insn 6 5 7 (set (reg:SI 5 di)
+        (const_int 1 [0x1])) test.cpp:28 -1
+     (nil))
+
+(call_insn 7 6 0 (call (mem:QI (symbol_ref:DI ("_Z41__static_initialization_and_destruction_0ii") [flags 0x3]  <function_decl 0x7f139aeba510 __static_initialization_and_destruction_0>) [0 __static_initialization_and_destruction_0 S1 A8])
+        (const_int 0 [0])) test.cpp:28 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL)
+;;  pred:       ENTRY (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 4 si)
+        (const_int 65535 [0xffff])) test.cpp:28 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 5 di)
+        (const_int 1 [0x1])) test.cpp:28 -1
+     (nil))
+(call_insn 7 6 0 2 (call (mem:QI (symbol_ref:DI ("_Z41__static_initialization_and_destruction_0ii") [flags 0x3]  <function_decl 0x7f139aeba510 __static_initialization_and_destruction_0>) [0 __static_initialization_and_destruction_0 S1 A8])
+        (const_int 0 [0])) test.cpp:28 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (nil))))
+;;  succ:       EXIT [100.0%]  (FALLTHRU)
+

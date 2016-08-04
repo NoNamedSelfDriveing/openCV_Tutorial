@@ -30,7 +30,7 @@ int main()
     sock = socket(AF_INET, SOCK_DGRAM, 0);
 
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(9000);
+    addr.sin_port = htons(2303);
     addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
     if(!capture.isOpened()){

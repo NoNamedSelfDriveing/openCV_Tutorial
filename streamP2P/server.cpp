@@ -55,7 +55,6 @@ int main(int argc, const char * argv[])
             imshow("test", image);
             GaussianBlur(image, image, Size(7, 7), 0.01, 0.01);
             cvtColor(image, image, COLOR_BGR2GRAY);
-            //Canny(image, image, 0, 30, 3);
             imshow(windowName, image);
             ibuff.clear();
         }
